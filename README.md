@@ -30,8 +30,18 @@ The `Mall_Customers.csv` dataset contains information about 200 mall customers w
 
 ## 📈 Results
 
+### 🔍 Elbow Method for Optimal Number of Clusters
+
+The Elbow Method was used to determine the optimal number of clusters for K-Means. The plot shows inertia decreasing sharply up to **k=5**, after which the decrease levels off — indicating that **5 clusters** is the best choice.
+
+<img src="images/elbow_method.png" alt="Elbow Method" width="400">
+
+> 💡 *Inertia drops significantly from 1 to 5 clusters, then plateaus — confirming k=5 as the "elbow point".*
+
 ### K-Means Clustering (Silhouette Score: 0.554)
 The algorithm identified 5 distinct customer segments:
+
+<img src="images/kmeans_clusters.png" alt="Elbow Method" width="600">
 
 | Cluster | Annual Income (k$) | Spending Score | Interpretation |
 |:-------:|:------------------:|:--------------:|----------------|
@@ -45,6 +55,8 @@ The algorithm identified 5 distinct customer segments:
 ### DBSCAN Clustering (Silhouette Score: 0.421)
 *Note: Silhouette score calculated excluding noise points (Cluster -1) to evaluate only meaningful clusters.*  
 DBSCAN identified 5 meaningful clusters plus outliers (labeled as -1):
+
+![DBSCAN Clustering](images/dbscan_clusters.png)
 
 | Cluster | Annual Income (k$) | Spending Score | Interpretation |
 |:-------:|:------------------:|:--------------:|----------------|
